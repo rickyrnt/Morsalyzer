@@ -183,7 +183,7 @@ tresult PLUGIN_API MorsalyzerProcessor::process (Vst::ProcessData& data)
 							length = rate;
 							break;
 						default:
-							FDebugPrint("Unrecognized character!");
+							break;
 						}
 
 						finished = false;
@@ -269,10 +269,10 @@ tresult PLUGIN_API MorsalyzerProcessor::getState (IBStream* state)
 }
 
 tresult MorsalyzerProcessor::receiveText(const char* text) {
-	FDebugPrint("I have recieved '");
-	FDebugPrint(text);
-	FDebugPrint("'!\n");
-
+	//FDebugPrint("I have recieved '");
+	//FDebugPrint(text);
+	//FDebugPrint("'!\n");
+	
 	std::string inText = text;
 	//convert to lowercase for convenience
 	std::transform(inText.begin(), inText.end(), inText.begin(),
@@ -280,8 +280,8 @@ tresult MorsalyzerProcessor::receiveText(const char* text) {
 
 	//convert to morse
 	convertToMorse(inText, newMorse);
-	FDebugPrint(newMorse.c_str());
-	FDebugPrint("\n");
+	//FDebugPrint(newMorse.c_str());
+	//FDebugPrint("\n");
 	
 	return kResultOk;
 }

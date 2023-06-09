@@ -36,7 +36,7 @@ private:
 
 	// from IControlListener
 	void valueChanged(CControl* /*pControl*/) override {
-		FDebugPrint("Sending message!\n");
+		//FDebugPrint("Sending message!\n");
 		UIcontroller->sendTextMessage(textEdit->getText().data());
 	}
 	void controlBeginEdit(CControl* /*pControl*/) override {}
@@ -46,7 +46,7 @@ private:
 	CView* verifyView(CView* view, const UIAttributes& /*attributes*/,
 		const IUIDescription* /*description*/) override {
 		if (CTextEdit* te = dynamic_cast<CTextEdit*>(view)) {
-			FDebugPrint("Initializing textedit!\n");
+			//FDebugPrint("Initializing textedit!\n");
 
 			//store pointer to textedit
 			textEdit = te;
